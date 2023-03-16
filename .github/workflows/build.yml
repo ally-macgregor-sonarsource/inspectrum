@@ -52,6 +52,7 @@ jobs:
         echo "$HOME/.sonar/sonar-scanner-${{ env.SONAR_SCANNER_VERSION }}-linux/bin" >> $GITHUB_PATH
 
     - name: Sonarqube Analysis 
+      working-directory: ${{runner.workspace}}/build
       run: |
         sonar-scanner --define sonar.cfamily.build-wrapper-output=bw-output  
       env:
