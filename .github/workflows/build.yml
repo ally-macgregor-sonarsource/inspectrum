@@ -44,6 +44,8 @@ jobs:
       run: $HOME/.sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build . --config $BUILD_TYPE
 
     - name: Download and install the SonarScanner
+      env:
+        SONAR_SCANNER_VERSION: 4.6.2.2472
       run: |
         curl -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${{ env.SONAR_SCANNER_VERSION }}-linux.zip
         unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
