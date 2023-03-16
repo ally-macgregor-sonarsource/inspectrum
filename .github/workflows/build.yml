@@ -41,7 +41,7 @@ jobs:
     - name: Build
       working-directory: ${{runner.workspace}}/build
       shell: bash
-      run: $HOME/.sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build . --config $BUILD_TYPE
+      run: $HOME/.sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir $HOME/.sonar/bw-output cmake --build . --config $BUILD_TYPE
 
     - name: Download and install the SonarScanner
       env:
@@ -53,7 +53,7 @@ jobs:
 
     - name: Sonarqube Analysis 
       run: |
-        sonar-scanner --define sonar.cfamily.build-wrapper-output=${{runner.workspace}}/bw-output  
+        sonar-scanner --define sonar.cfamily.build-wrapper-output=$HOME/.sonar/bw-output  
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
