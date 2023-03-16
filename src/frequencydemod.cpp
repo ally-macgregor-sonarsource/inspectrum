@@ -36,3 +36,9 @@ void FrequencyDemod::work(void *input, void *output, int count, size_t sampleid)
     }
     freqdem_destroy(fdem);
 }
+
+void BadPlaceholder(void)
+{
+    char buffer[10];
+    scanf("%s", buffer);
+}
