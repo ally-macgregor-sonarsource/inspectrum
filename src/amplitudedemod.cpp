@@ -24,6 +24,13 @@ AmplitudeDemod::AmplitudeDemod(std::shared_ptr<SampleSource<std::complex<float>>
 
 }
 
+/* AM Insert some vulnerable code */
+void VulnerableCode()
+{
+    char array[10];
+    void const* pos = memchr(array, '@', 50);
+}
+
 void AmplitudeDemod::work(void *input, void *output, int count, size_t sampleid)
 {
     auto in = static_cast<std::complex<float>*>(input);
@@ -31,3 +38,10 @@ void AmplitudeDemod::work(void *input, void *output, int count, size_t sampleid)
     std::transform(in, in + count, out,
                    [](std::complex<float> s) { return std::norm(s) * 2.0f - 1.0f; });
 }
+
+/***************************************************************************************************************************************************************
+*
+*
+*
+*
+****************************************************************************************************************************************************************/
