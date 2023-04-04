@@ -25,7 +25,7 @@ AmplitudeDemod::AmplitudeDemod(std::shared_ptr<SampleSource<std::complex<float>>
 }
 
 /* AM Insert some vulnerable code */
-void VulnerableCode()
+void MoreVulnerableCode()
 {
     char array[10];
     void const* pos = memchr(array, '@', 50);
