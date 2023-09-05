@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     else
         printf("Out\n");
 
-    if (1)
+    if (true)
         printf("In\n");
     else
         printf("Out\n");
