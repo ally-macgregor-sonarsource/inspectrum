@@ -31,6 +31,19 @@ void VulnerableCode()
 
 int main(int argc, char *argv[])
 {
+    //case 00024050 test
+    int const a = 4;
+    if (a == 4)
+        printf("In\n");
+    else
+        print("Out\n");
+
+    if (1)
+        printf("In\n");
+    else
+        printf("Out\n");
+
+    
     QApplication a(argc, argv);
     a.setApplicationName("inspectrum");
     a.setOrganizationName("inspectrum");
