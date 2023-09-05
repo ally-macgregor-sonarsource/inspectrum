@@ -32,11 +32,11 @@ void VulnerableCode()
 int main(int argc, char *argv[])
 {
     //case 00024050 test
-    int const a = 4;
-    if (a == 4)
+    int const test_var = 4;
+    if (test_var == 4)
         printf("In\n");
     else
-        print("Out\n");
+        printf("Out\n");
 
     if (1)
         printf("In\n");
